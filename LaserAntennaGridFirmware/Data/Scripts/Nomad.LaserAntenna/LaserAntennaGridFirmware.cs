@@ -484,6 +484,7 @@ namespace Nomad.LaserAntennaGridFirmware
 					{
 						// MyAPIGateway.Utilities.ShowMessage("Debug", String.Format("Update: Antenna:{0} on {1}:{2} connecting", this.source.EntityId, this.source.CubeGrid.DisplayName, this.source.CubeGrid.EntityId));
 						MyCubeGrid.CreateGridGroupLink(GridLinkTypeEnum.Logical, this.source.EntityId, (MyCubeGrid) this.source.CubeGrid, (MyCubeGrid) this.target.CubeGrid);
+						MyCubeGrid.CreateGridGroupLink(GridLinkTypeEnum.Electrical, this.source.EntityId, (MyCubeGrid) this.source.CubeGrid, (MyCubeGrid) this.target.CubeGrid);
 
 						this.ConnectedToGrid = true;
 
@@ -508,6 +509,7 @@ namespace Nomad.LaserAntennaGridFirmware
 					{
 						// MyAPIGateway.Utilities.ShowMessage("Debug", String.Format("Update: Antenna:{0} on {1}:{2} disconnecting", this.source.EntityId, this.source.CubeGrid.DisplayName, this.source.CubeGrid.EntityId));
 						MyCubeGrid.BreakGridGroupLink(GridLinkTypeEnum.Logical, this.source.EntityId, (MyCubeGrid) this.source.CubeGrid, (MyCubeGrid) this.target.CubeGrid);
+						MyCubeGrid.BreakGridGroupLink(GridLinkTypeEnum.Electrical, this.source.EntityId, (MyCubeGrid) this.source.CubeGrid, (MyCubeGrid) this.target.CubeGrid);
 
 						this.ConnectedToGrid = false;
 
